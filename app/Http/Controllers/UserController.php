@@ -19,13 +19,13 @@ public function loginPage(){
 }
 
 public function getUser($id){
-    $user = app('db')->select("SELECT * FROM tbluser WHERE id=".$id);
+    $user = app('db')->select("SELECT * FROM tbluser2 WHERE id=".$id);
     if($user == null) return response()->json('No user found in the database');
     return response()->json($user,200);
 }
 
 public function getUsers(){
-    $users = app('db')->select("SELECT * FROM tbluser");
+    $users = app('db')->select("SELECT * FROM tbluser2");
     return response()->json($users,200);
     }
 
@@ -34,7 +34,7 @@ public function getUsers(){
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $user = app('db')->select("SELECT * FROM tbluser WHERE username='$username' and password='$password'");
+        $user = app('db')->select("SELECT * FROM tbluser2 WHERE username='$username' and password='$password'");
 
         if(empty($user)){
             return 'Doesnt Exists in the Database or Incorrect Credentials.';

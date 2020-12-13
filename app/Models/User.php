@@ -12,7 +12,7 @@
         // The code below will not require the field create_at and update_at
         
         // name of table
-         protected $table = 'tbluser';
+         protected $table = 'tbluser2';
         // column sa table
          protected $fillable = [
             'username', 'password'
